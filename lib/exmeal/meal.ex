@@ -27,6 +27,8 @@ defmodule Exmeal.Meal do
     end
   end
 
+  def get_changeset(error), do: error
+
   defp convert_to_datetime(%{date: date} = params) do
     case DateTime.new(date, ~T[00:00:00], "Etc/UTC") do
       {:ok, date} -> %{params | date: date}

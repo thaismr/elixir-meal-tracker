@@ -1,16 +1,15 @@
 {
   "excluded": [],
-  "failed": [
+  "failed": [],
+  "invalid": [],
+  "passed": [
     {
       "describe": "Create Meal",
       "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal/meals/create_test.exs",
       "line": 22,
       "module": "Elixir.Exmeal.Meals.CreateTest",
       "test": "test Create Meal when there are invalid params, returns an error"
-    }
-  ],
-  "invalid": [],
-  "passed": [
+    },
     {
       "describe": "Create Meal",
       "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal/meals/create_test.exs",
