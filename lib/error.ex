@@ -1,3 +1,3 @@
 defmodule Exmeal.Error do
-# TO DO
+  defstruct [:detail]
 end
