@@ -1,6 +1,21 @@
 {
   "excluded": [],
-  "failed": [],
+  "failed": [
+    {
+      "describe": "Delete Meal",
+      "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal/meals/delete_test.exs",
+      "line": 25,
+      "module": "Elixir.Exmeal.Meals.DeleteTest",
+      "test": "test Delete Meal when an invalid id is given, returns an error"
+    },
+    {
+      "describe": "Delete Meal",
+      "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal/meals/delete_test.exs",
+      "line": 5,
+      "module": "Elixir.Exmeal.Meals.DeleteTest",
+      "test": "test Delete Meal when a valid id is given, returns the meal"
+    }
+  ],
   "invalid": [],
   "passed": [
     {
@@ -16,6 +31,34 @@
       "line": 5,
       "module": "Elixir.Exmeal.Meals.CreateTest",
       "test": "test Create Meal when all params are valid, returns the meal"
+    },
+    {
+      "describe": "Get Meal",
+      "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal/meals/get_test.exs",
+      "line": 25,
+      "module": "Elixir.Exmeal.Meals.GetTest",
+      "test": "test Get Meal when an invalid id is given, returns an error"
+    },
+    {
+      "describe": "Get Meal",
+      "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal/meals/get_test.exs",
+      "line": 5,
+      "module": "Elixir.Exmeal.Meals.GetTest",
+      "test": "test Get Meal when a valid id is given, returns the meal"
+    },
+    {
+      "describe": "Update Meal",
+      "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal/meals/update_test.exs",
+      "line": 24,
+      "module": "Elixir.Exmeal.Meals.UpdateTest",
+      "test": "test Update Meal when an invalid id is given, returns an error"
+    },
+    {
+      "describe": "Update Meal",
+      "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal/meals/update_test.exs",
+      "line": 5,
+      "module": "Elixir.Exmeal.Meals.UpdateTest",
+      "test": "test Update Meal when a valid id is given, returns the meal"
     }
   ],
   "skiped": []

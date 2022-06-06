@@ -11,4 +11,7 @@ defmodule Exmeal.Error do
       result: result
     }
   end
+
+  def build_meal_not_found_error, do: build(:not_found, "Meal not found")
+
 end
