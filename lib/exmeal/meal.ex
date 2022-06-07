@@ -5,62 +5,53 @@ defmodule Exmeal.Meal do
   @primary_key {:id, :binary_id, autogenerate: true}
 
   @required_params [:calories, :date, :description]
+  @update_params [:calories, :description]
 
   @derive {Jason.Encoder, only: [:id | @required_params]}
 
   schema "meals" do
     field :calories, :integer
-    field :date, :naive_datetime
+    field :date, :date, virtual: true
+    field :datetime, :utc_datetime
     field :description, :string
   end
 
-  def changeset(struct \\ %__MODULE__{}, params)
-
-  def changeset(struct, %{date: %NaiveDateTime{}} = params) do
-    struct
+  def changeset(params) do
+    %__MODULE__{}
     |> cast(params, @required_params)
     |> validate_required(@required_params)
-  end
-
-  def changeset(struct, %{date: %Date{}} = params) do
-    params = convert_to_datetime(params)
-    changeset(struct, params)
-  end
-
-  def changeset(struct, %{date: date} = params) do
-    params = %{params | date: Date.from_iso8601!(date)}
-    params = convert_to_datetime(params)
-    changeset(struct, params)
+    |> put_meal_datetime()
   end
 
   def changeset(struct, params) do
     struct
-    |> cast(params, @required_params)
-    |> validate_required(@required_params)
+    |> cast(params, @update_params)
+    |> validate_required(@update_params)
   end
 
-  def format_meal_date({:ok, struct}) do
-    case convert_to_date(struct) do
-      :error -> {:error, "Error converting date format"}
-      struct -> {:ok, struct}
-    end
+  defp put_meal_datetime(
+         %Ecto.Changeset{
+           valid?: true,
+           changes: %{date: date}
+         } = changeset
+       ) do
+    change(changeset, convert_to_datetime(date))
   end
 
-  def format_meal_date(error), do: error
+  defp put_meal_datetime(changeset), do: changeset
 
-  defp convert_to_datetime(%{date: date} = params) do
-    case NaiveDateTime.new(date, ~T[00:00:00]) do
-      {:ok, date} -> %{params | date: date}
-      _error -> :error
-    end
+  def format_meal_date({:ok, %{datetime: datetime} = meal}) do
+    %{date: date} = convert_to_date(datetime)
+    {:ok, %{meal | date: date}}
   end
 
-  defp convert_to_datetime(params), do: params
+  def format_meal_date(result), do: result
 
-  defp convert_to_date(%{date: date} = params) do
-    case Date.new(date.year, date.month, date.day) do
-      {:ok, date} -> %{params | date: date}
-      _error -> :error
-    end
+  defp convert_to_datetime(date) do
+    %{datetime: DateTime.new!(date, ~T[00:00:00])}
+  end
+
+  defp convert_to_date(datetime) do
+    %{date: Date.new!(datetime.year, datetime.month, datetime.day)}
   end
 end

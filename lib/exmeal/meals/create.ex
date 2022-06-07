@@ -5,15 +5,14 @@ defmodule Exmeal.Meals.Create do
    params
     |> Meal.changeset()
     |> Repo.insert()
-    |> Meal.format_meal_date()
-    |> handle_response()
+    |> handle_insert()
   end
 
-  defp handle_response({:ok, %Meal{}} = result) do
+  defp handle_insert({:ok, %Meal{}} = result) do
     result
   end
 
-  defp handle_response({:error, result}) do
+  defp handle_insert({:error, result}) do
     {:error, Error.build(:bad_request, result)}
   end
 end

@@ -8,7 +8,7 @@ use Mix.Config
 config :exmeal, Exmeal.Repo,
   username: "phoenixuser",
   password: "postgres",
-  database: "exmeal_test_3#{System.get_env("MIX_TEST_PARTITION")}",
+  database: "exmeal_test#{System.get_env("MIX_TEST_PARTITION")}",
   hostname: "localhost",
   port: "5433",
   pool: Ecto.Adapters.SQL.Sandbox

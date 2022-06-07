@@ -1,6 +1,8 @@
 {
   "excluded": [],
-  "failed": [
+  "failed": [],
+  "invalid": [],
+  "passed": [
     {
       "describe": "changeset/1",
       "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal/exmeal_test.exs",
@@ -8,16 +10,6 @@
       "module": "Elixir.Exmeal.MealTest",
       "test": "test changeset/1 when all params are valid, returns a valid changeset"
     },
-    {
-      "describe": "create/2",
-      "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal_web/controller/meals_controller_test.exs",
-      "line": 5,
-      "module": "Elixir.Exmeal.MealsControllerTest",
-      "test": "test create/2 when all params are valid, creates a meal"
-    }
-  ],
-  "invalid": [],
-  "passed": [
     {
       "describe": "Update Meal",
       "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal/meals/update_test.exs",
@@ -31,34 +23,6 @@
       "line": 5,
       "module": "Elixir.Exmeal.Meals.UpdateTest",
       "test": "test Update Meal when a valid id is given, returns the meal"
-    },
-    {
-      "describe": "Delete Meal",
-      "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal/meals/delete_test.exs",
-      "line": 25,
-      "module": "Elixir.Exmeal.Meals.DeleteTest",
-      "test": "test Delete Meal when an invalid id is given, returns an error"
-    },
-    {
-      "describe": "Delete Meal",
-      "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal/meals/delete_test.exs",
-      "line": 5,
-      "module": "Elixir.Exmeal.Meals.DeleteTest",
-      "test": "test Delete Meal when a valid id is given, returns the meal"
-    },
-    {
-      "describe": "Create Meal",
-      "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal/meals/create_test.exs",
-      "line": 22,
-      "module": "Elixir.Exmeal.Meals.CreateTest",
-      "test": "test Create Meal when there are invalid params, returns an error"
-    },
-    {
-      "describe": "Create Meal",
-      "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal/meals/create_test.exs",
-      "line": 5,
-      "module": "Elixir.Exmeal.Meals.CreateTest",
-      "test": "test Create Meal when all params are valid, returns the meal"
     },
     {
       "describe": "Get Meal",
@@ -75,11 +39,53 @@
       "test": "test Get Meal when a valid id is given, returns the meal"
     },
     {
+      "describe": "Create Meal",
+      "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal/meals/create_test.exs",
+      "line": 22,
+      "module": "Elixir.Exmeal.Meals.CreateTest",
+      "test": "test Create Meal when there are invalid params, returns an error"
+    },
+    {
+      "describe": "Create Meal",
+      "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal/meals/create_test.exs",
+      "line": 5,
+      "module": "Elixir.Exmeal.Meals.CreateTest",
+      "test": "test Create Meal when all params are valid, returns the meal"
+    },
+    {
+      "describe": "Delete Meal",
+      "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal/meals/delete_test.exs",
+      "line": 25,
+      "module": "Elixir.Exmeal.Meals.DeleteTest",
+      "test": "test Delete Meal when an invalid id is given, returns an error"
+    },
+    {
+      "describe": "Delete Meal",
+      "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal/meals/delete_test.exs",
+      "line": 5,
+      "module": "Elixir.Exmeal.Meals.DeleteTest",
+      "test": "test Delete Meal when a valid id is given, returns the meal"
+    },
+    {
       "describe": "delete/2",
       "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal_web/controller/meals_controller_test.exs",
       "line": 58,
       "module": "Elixir.Exmeal.MealsControllerTest",
       "test": "test delete/2 when id not exist, return an error"
+    },
+    {
+      "describe": "create/2",
+      "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal_web/controller/meals_controller_test.exs",
+      "line": 5,
+      "module": "Elixir.Exmeal.MealsControllerTest",
+      "test": "test create/2 when all params are valid, creates a meal"
+    },
+    {
+      "describe": "get/2",
+      "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal_web/controller/meals_controller_test.exs",
+      "line": 130,
+      "module": "Elixir.Exmeal.MealsControllerTest",
+      "test": "test get/2 when id not exist, return an error"
     },
     {
       "describe": "delete/2",
@@ -91,9 +97,16 @@
     {
       "describe": "get/2",
       "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal_web/controller/meals_controller_test.exs",
-      "line": 130,
+      "line": 108,
       "module": "Elixir.Exmeal.MealsControllerTest",
-      "test": "test get/2 when id not exist, return an error"
+      "test": "test get/2 when id exist, return the meal"
+    },
+    {
+      "describe": "update/2",
+      "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal_web/controller/meals_controller_test.exs",
+      "line": 73,
+      "module": "Elixir.Exmeal.MealsControllerTest",
+      "test": "test update/2 when id exist, update the meal"
     },
     {
       "describe": "update/2",
@@ -103,25 +116,11 @@
       "test": "test update/2 when not exist id, return an error"
     },
     {
-      "describe": "get/2",
-      "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal_web/controller/meals_controller_test.exs",
-      "line": 108,
-      "module": "Elixir.Exmeal.MealsControllerTest",
-      "test": "test get/2 when id exist, return the meal"
-    },
-    {
       "describe": "create/2",
       "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal_web/controller/meals_controller_test.exs",
       "line": 26,
       "module": "Elixir.Exmeal.MealsControllerTest",
       "test": "test create/2 when there are invalid params, returns an error"
-    },
-    {
-      "describe": "update/2",
-      "file": "c:/Users/thais/vscode-projects/elixir-meal-tracker/test/exmeal_web/controller/meals_controller_test.exs",
-      "line": 73,
-      "module": "Elixir.Exmeal.MealsControllerTest",
-      "test": "test update/2 when id exist, update the meal"
     },
     {
       "describe": null,
