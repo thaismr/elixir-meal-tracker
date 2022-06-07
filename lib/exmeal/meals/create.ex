@@ -1,7 +1,7 @@
 defmodule Exmeal.Meals.Create do
   alias Exmeal.{Error, Meal, Repo}
 
-  def call(%{date: date} = params) do
+  def call(params) do
    params
     |> Meal.changeset()
     |> Repo.insert()
