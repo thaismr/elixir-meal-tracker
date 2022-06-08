@@ -1,15 +1,7 @@
 defmodule Exmeal.Meals.Update do
-  alias Ecto.UUID
   alias Exmeal.{Error, Meal, Repo}
 
   def call(%{"id" => id} = params) do
-    case UUID.cast(id) do
-      :error -> {:error, %{status: :bad_request, result: "Invalid id format!"}}
-      {:ok, _uuid} -> update(params)
-    end
-  end
-
-  defp update(%{"id" => id} = params) do
     case Repo.get(Meal, id) do
       nil -> {:error, Error.build_meal_not_found_error()}
       meal -> do_update(meal, params)
